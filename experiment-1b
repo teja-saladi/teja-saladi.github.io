@@ -1,0 +1,28 @@
+b. Write a HTML program, to explain the working of hyperlinks using <a> tag and href, target Attributes. 
+
+PROGRAM:
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Hyperlinks in HTML</title> 
+</head> 
+<body> 
+<h1>Working with Hyperlinks in HTML</h1> 
+<h2>Basic Hyperlink</h2> 
+<p><a href="https://www.linkedin.com/in/teja-saladi-3375a62a1/">Visit linkedin Website</a></p> 
+<h2>Hyperlink with Target Attribute</h2> 
+<p><a href="https://www.linkedin.com/in/teja-saladi-3375a62a1/" target="_blank">Open Example in New Tab</a></p> 
+<h2>Hyperlink to Another Page</h2> 
+<p><a href="https://www.linkedin.com/jobs/">Go to jobs Page</a></p> 
+<h2>Email Link</h2> 
+<p><a href="teja.saladi@sasi.ac.in">Send Email</a></p> 
+<h2>Phone Link</h2> 
+<p><a href="tel:+916302732765">Call Us</a></p> 
+<h2>Link to an ID on the Same Page</h2> 
+<p><a href="#Home">Go to Home</a></p> 
+<h2 id="Home">Home</h2> 
+<p>This is Home of the page.</p> 
+</body> 
+</html>
