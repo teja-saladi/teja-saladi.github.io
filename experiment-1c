@@ -1,0 +1,23 @@
+c. Create a HTML document that has your image and your friend’s image with a specific 
+height and width. Also when clicked on the images it should navigate to their respective profiles. 
+
+
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Image Links</title> 
+</head> 
+<body> 
+<h1>Profile Images with Links</h1> 
+<h2>My Profile</h2> 
+<a href="https://tse2.mm.bing.net/th?id=OIP.7nr_3Syg5PuXiSdpJHZZKAHaEK&pid=Api&P=0&h=180" target="_blank"> 
+<img src="https://tse2.mm.bing.net/th?id=OIP.7nr_3Syg5PuXiSdpJHZZKAHaEK&pid=Api&P=0&h=180.jpg" alt="My Image" width="200" height="200"> 
+</a> 
+<h2>Friend's Profile</h2> 
+<a href="https://tse3.mm.bing.net/th?id=OIP.iRr5X8sifzSKSQgnaYvzKgHaEo&pid=Api&P=0&h=180" target="_blank"> 
+<img src="https://tse3.mm.bing.net/th?id=OIP.iRr5X8sifzSKSQgnaYvzKgHaEo&pid=Api&P=0&h=180.jpg" alt="Friend's Image" width="200" height="200"> 
+</a> 
+</body> 
+</html>
