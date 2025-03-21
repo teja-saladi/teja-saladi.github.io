@@ -1,6 +1,3 @@
-c. Create a HTML document that has your image and your friend’s image with a specific 
-height and width. Also when clicked on the images it should navigate to their respective profiles. 
-
 
 <!DOCTYPE html> 
 <html lang="en"> 
