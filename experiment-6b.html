@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Output Methods</title>
+</head>
+<body>
+    <h1>Different Ways to Display Output in JavaScript</h1>
+    <!-- Output using innerHTML -->
+    <p id="outputText">This text will change.</p>
+    <button onclick="showOutputs()">Click to Show Outputs</button>
+    <script>
+        function showOutputs() {
+            // 1. Console Output
+            console.log("Hello! This is console.log output.");
+            // 2. Document Write
+            document.write("This is document.write output!<br>");
+            // 3. Alert Box
+            alert("This is alert() output!");
+            // 4. Changing innerHTML
+            document.getElementById("outputText").innerHTML = "innerHTML changed!";
+        }
+    </script>
+</body>
+</html>
