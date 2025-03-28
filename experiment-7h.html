@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<title>My College - Student Details</title> 
+<script> 
+function Student(firstName, lastName, branch) { 
+this.firstName = firstName; 
+this.lastName = lastName; 
+this.branch = branch; 
+this.id = "A" + Math.floor(Math.random() * 1000); 
+Object.defineProperty(this, 'fullName', { 
+get: function() { 
+return this.firstName + " " + this.lastName; 
+}, 
+set: function(name) { 
+var parts = name.split(" "); 
+this.firstName = parts[0]; 
+this.lastName = parts[1] || ""; 
+}, 
+enumerable: true, 
+configurable: true 
+}); 
+this.displayDetails = function() { 
+var studentDiv = document.createElement('div'); 
+studentDiv.innerHTML = '<h2>Student Details</h2>' + 
+'<p><strong>ID:</strong> ' + this.id + '</p>' + 
+'<p><strong>Full Name:</strong> ' + this.fullName + '</p>' + 
+'<p><strong>Branch:</strong> ' + this.branch + '</p>'; 
+document.body.appendChild(studentDiv); 
+} 
+} 
+window.onload = function() { 
+var student1 = new Student("teja", "saladi", "Computer Science"); 
+student1.displayDetails(); 
+var updatePara = document.createElement('p'); 
+updatePara.textContent = "Updating full name using the accessor..."; 
+document.body.appendChild(updatePara); 
+student1.fullName = "ch jeeven"; 
+student1.displayDetails(); 
+} 
+</script> 
+</head> 
+<body> 
+</body> 
+</html> 
