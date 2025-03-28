@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Input Methods</title>
+</head>
+<body>
+    <h1>Different Ways to Take Input in JavaScript</h1>
+    <!-- Input using HTML Form -->
+    <label for="nameInput">Enter your name:</label>
+    <input type="text" id="nameInput">
+    <button onclick="getInput()">Submit</button>
+    <p id="output"></p>
+    <button onclick="promptInput()">Take Input using Prompt</button>
+    <button onclick="confirmInput()">Take Input using Confirm</button>
+    <script>
+        function getInput() {
+            // 1. Taking input from an HTML input field
+            let name = document.getElementById("nameInput").value;
+            document.getElementById("output").innerHTML = "Hello, " + name + "!";
+        }
+        function promptInput() {
+            // 2. Taking input using prompt()
+            let userInput = prompt("Enter your age:");
+            alert("You entered: " + userInput);
+        }
+        function confirmInput() {
+            // 3. Taking input using confirm()
+            let response = confirm("Do you like JavaScript?");
+            if (response) {
+                alert("Great! Keep learning.");
+            } else {
+                alert("No worries! You will like it soon.");
+            }
+        }
+    </script>
+</body>
+</html>
