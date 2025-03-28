@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<title>My College - Student Details</title> 
+<script> 
+function Student(name, branch, dob, joinYear) { 
+this.name = name; 
+this.id = "A" + Math.floor(Math.random() * 1000); 
+this.branch = branch; 
+this.dob = new Date(dob); 
+this.joinYear = joinYear; 
+var today = new Date(); 
+var age = today.getFullYear() - this.dob.getFullYear(); 
+var m = today.getMonth() - this.dob.getMonth(); 
+if (m < 0 || (m === 0 && today.getDate() < this.dob.getDate())) { 
+age--; 
+} 
+this.age = age; 
+this.displayDetails = function() { 
+var studentDiv = document.createElement('div'); 
+studentDiv.innerHTML = '<h2>Student Details</h2>' + 
+'<p><strong>Name:</strong> ' + this.name + '</p>' + 
+'<p><strong>ID:</strong> ' + this.id + '</p>' + 
+'<p><strong>Branch:</strong> ' + this.branch + '</p>' + 
+'<p><strong>Date of Birth:</strong> ' + this.dob.toDateString() + '</p>' + 
+'<p><strong>Age:</strong> ' + this.age + '</p>' + 
+'<p><strong>Year of Joining:</strong> ' + this.joinYear + '</p>'; 
+document.body.appendChild(studentDiv); 
+} 
+} 
+window.onload = function() { 
+var header = document.createElement('h1'); 
+header.textContent = 'My College - Student Details'; 
+document.body.appendChild(header); 
+var student1 = new Student("teja", "Computer Science", "2004-05-14", 2025); 
+student1.displayDetails(); 
+var dateHeader = document.createElement('h2'); 
+dateHeader.textContent = 'Date Object Properties and Methods'; 
+document.body.appendChild(dateHeader); 
+var currentDate = new Date(); 
+var currentDatePara = document.createElement('p'); 
+currentDatePara.textContent = 'Current Date and Time: ' + currentDate.toLocaleString(); 
+document.body.appendChild(currentDatePara); 
+var currentYearPara = document.createElement('p'); 
+currentYearPara.textContent = 'Current Year: ' + currentDate.getFullYear(); 
+document.body.appendChild(currentYearPara); 
+var currentMonthPara = document.createElement('p'); 
+currentMonthPara.textContent = 'Current Month: ' + (currentDate.getMonth() + 1); 
+document.body.appendChild(currentMonthPara); 
+var currentDayPara = document.createElement('p'); 
+currentDayPara.textContent = 'Current Day: ' + currentDate.getDate(); 
+document.body.appendChild(currentDayPara); 
+var currentHoursPara = document.createElement('p'); 
+currentHoursPara.textContent = 'Current Hour: ' + currentDate.getHours(); 
+document.body.appendChild(currentHoursPara); 
+var currentMinutesPara = document.createElement('p'); 
+currentMinutesPara.textContent = 'Current Minutes: ' + currentDate.getMinutes(); 
+document.body.appendChild(currentMinutesPara); 
+var currentSecondsPara = document.createElement('p'); 
+currentSecondsPara.textContent = 'Current Seconds: ' + currentDate.getSeconds(); 
+document.body.appendChild(currentSecondsPara); 
+} 
+</script> 
+</head> 
+<body> 
+</body> 
+</html>
