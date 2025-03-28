@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selector Examples</title>
+    <style>
+        /* Simple Selectors */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: blue;
+        }
+        #unique {
+            color: darkred;
+            font-weight: bold;
+        }
+        .highlight {
+            color: green;
+            font-size: 20px;
+        }
+        h2, p {
+            text-align: center;
+        }
+        /* Combinator Selectors */
+        div p {
+            color: navy;
+        }
+        div > p {
+            font-style: italic;
+        }
+        h2 + p {
+            color: darkorange;
+        }
+        h2 ~ p {
+            text-decoration: underline;
+        }
+        /* Pseudo-class Selector */
+        a:hover {
+            color: red;
+        }
+        input:focus {
+            border: 2px solid blue;
+        }
+        /* Pseudo-element Selector */
+        p::first-letter {
+            font-size: 30px;
+            color: brown;
+        }
+        p::before {
+            content: "[Note] ";
+            font-weight: bold;
+        }
+        /* Attribute Selector */
+        input[type="text"] {
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Selector Examples</h1>
+    <h2>Simple Selectors</h2>
+    <p id="unique">This paragraph is styled using an ID selector.</p>
+    <p class="highlight">This paragraph is styled using a class selector.</p>
+    <p>This is a normal paragraph using element selector.</p>
+    <h2>Combinator Selectors</h2>
+    <div>
+        <p>This paragraph is inside a div (descendant selector).</p>
+        <p>This paragraph is also inside a div.</p>
+    </div>
+    <p>Adjacent sibling selector applied here.</p>
+    <p>General sibling selector applied here.</p>
+    <h2>Pseudo-Class Selector</h2>
+    <a href="#">Hover over this link</a>
+    <br>
+    <input type="text" placeholder="Click to see focus effect">
+    <h2>Pseudo-Element Selector</h2>
+    <p>This paragraph demonstrates pseudo-elements.</p>
+    <h2>Attribute Selector</h2>
+    <input type="text" placeholder="Styled using attribute selector">
+</body>
+</html>
