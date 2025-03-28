@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Eligibility Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Voter Eligibility Check</h1>
+    <button onclick="getVoterDetails()">Check Eligibility</button>
+    <div id="result"></div>
+    <script>
+        function getVoterDetails() {
+            let name = prompt("Enter your name:");
+            let age = prompt("Enter your age:");
+            age = parseInt(age);
+            let eligibility = (age >= 18) ? "Eligible to Vote" : "Not Eligible to Vote";
+                       document.getElementById("result").innerHTML = `
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Voting Eligibility</th>
+                    </tr>
+                    <tr>
+                        <td>${name}</td>
+                        <td>${age}</td>
+                        <td>${eligibility}</td>
+                    </tr>
+                </table>
+            `;
+        }
+    </script>
+</body>
+</html>
