@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Color Reference</title>
+    <style>
+        body {
+            height: 200vh; /* Just to enable scrolling for demonstration */
+            background-image: url('your-image.jpg'); /* Replace with your image URL */
+            background-repeat: no-repeat;
+            background-position: center 50vh; /* Places image halfway down the page */
+            background-attachment: fixed; /* Keeps it in place when scrolling */
+            transform: scaleX(-1); /* Flips the image horizontally */
+            font-family: Arial, sans-serif;
+        }
+        .color-box {
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            color: white;
+        }
+        .named-color {
+            background-color: blue;
+        }
+        .hex-color {
+            background-color: #ff5733;
+        }
+        .rgb-color {
+            background-color: rgb(60, 179, 113);
+        }
+        .rgba-color {
+            background-color: rgba(255, 99, 71, 0.7);
+        }
+        .hsl-color {
+            background-color: hsl(240, 100%, 50%);
+        }
+        .hsla-color {
+            background-color: hsla(120, 100%, 50%, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h2>Different Ways to Reference Colors in CSS</h2>
+    <div class="color-box named-color">Named Color</div>
+    <div class="color-box hex-color">Hex Color</div>
+    <div class="color-box rgb-color">RGB Color</div>
+    <div class="color-box rgba-color">RGBA Color</div>
+    <div class="color-box hsl-color">HSL Color</div>
+    <div class="color-box hsla-color">HSLA Color</div>
+</body>
+</html>
