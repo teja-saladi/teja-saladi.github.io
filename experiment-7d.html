@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My College - Student Details</title>
+  <script>
+     function Student(name, branch, marks, totalMarks) {
+      this.name = name;
+         this.id = "A" + Math.floor(Math.random() * 1000);
+      this.branch = branch;
+      this.marks = marks;
+      this.totalMarks = totalMarks;
+           this.percentage = Math.round((marks / totalMarks) * 100);
+
+            this.displayDetails = function() {
+            var studentDiv = document.createElement('div');
+        studentDiv.innerHTML = '<h2>Student Details</h2>' +
+                               '<p><strong>Name:</strong> ' + this.name + '</p>' +
+                               '<p><strong>ID:</strong> ' + this.id + '</p>' +
+                               '<p><strong>Branch:</strong> ' + this.branch + '</p>' +
+                               '<p><strong>Marks:</strong> ' + this.marks + ' out of ' + this.totalMarks + '</p>' +
+                               '<p><strong>Percentage:</strong> ' + this.percentage + '%</p>';
+               document.body.appendChild(studentDiv);
+      }
+    }
+        window.onload = function() {
+          var header = document.createElement('h1');
+      header.textContent = 'My College - Student Details';
+      document.body.appendChild(header);
+      var student1 = new Student("Arjun", "Computer Science", 432, 500);
+           student1.displayDetails();
+       var infoPara = document.createElement('p');
+      infoPara.textContent = 'Student details include a randomly generated ID and a rounded percentage computed using Math methods.';
+      document.body.appendChild(infoPara);
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
