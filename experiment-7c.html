@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My College - Student Details</title>
+  <script>
+        function Student(name, id, branch) {
+      this.name = name;
+      this.id = id;
+      this.branch = branch;
+            this.displayDetails = function() {
+                var studentDiv = document.createElement('div');
+        studentDiv.innerHTML = '<h2>Student Details</h2>' +
+                               '<p><strong>Name:</strong> ' + this.name + '</p>' +
+                               '<p><strong>ID:</strong> ' + this.id + '</p>' +
+                               '<p><strong>Branch:</strong> ' + this.branch + '</p>';
+                document.body.appendChild(studentDiv);
+      }
+    }
+        window.onload = function() {
+      var header = document.createElement('h1');
+      header.textContent = 'My College - Student Details';
+      document.body.appendChild(header);
+           var student1 = new Student("Arjun", "A001", "Computer Science");
+         student1.displayDetails();
+           var infoPara = document.createElement('p');
+      infoPara.textContent = 'For more information, visit admin department.';
+      document.body.appendChild(infoPara);
+           // Section header for Array Operations
+      var arrayHeader = document.createElement('h2');
+      arrayHeader.textContent = 'Array Object Properties and Methods';
+      document.body.appendChild(arrayHeader);
+      // Initialize an array of student names
+      var studentNames = ["Arjun", "Aisha", "Rohan", "Priya"];
+      // Display the initial array using join()
+      var initialArrayPara = document.createElement('p');
+      initialArrayPara.textContent = 'Initial Array: ' + studentNames.join(", ");
+      document.body.appendChild(initialArrayPara);
+      // Display the length property of the array
+      var lengthPara = document.createElement('p');
+      lengthPara.textContent = 'Array Length: ' + studentNames.length;
+      document.body.appendChild(lengthPara);
+      // Add a new student name using the push() method
+      studentNames.push("Suresh");
+      var pushPara = document.createElement('p');
+      pushPara.textContent = 'After push("Suresh"): ' + studentNames.join(", ");
+      document.body.appendChild(pushPara);
+      // Remove the last element using the pop() method
+      var removedName = studentNames.pop();
+      var popPara = document.createElement('p');
+      popPara.textContent = 'After pop(), removed: ' + removedName + '. Array now: ' + studentNames.join(", ");
+      document.body.appendChild(popPara);
+      // Sort the array using the sort() method
+      studentNames.sort();
+      var sortPara = document.createElement('p');
+      sortPara.textContent = 'After sort(): ' + studentNames.join(", ");
+      document.body.appendChild(sortPara);
+      // Reverse the array using the reverse() method
+      studentNames.reverse();
+      var reversePara = document.createElement('p');
+      reversePara.textContent = 'After reverse(): ' + studentNames.join(", ");
+      document.body.appendChild(reversePara);
+      // Join array elements into a string using the join() method with a custom separator
+      var joinStr = studentNames.join(" - ");
+      var joinPara = document.createElement('p');
+      joinPara.textContent = 'Using join(" - "): ' + joinStr;
+      document.body.appendChild(joinPara);
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
