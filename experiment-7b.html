@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My College - Student Details</title>
+  <script>
+        function Student(name, id, branch) {
+      this.name = name;
+      this.id = id;
+      this.branch = branch;
+           this.displayDetails = function() {
+              var studentDiv = document.createElement('div');
+        studentDiv.innerHTML = '<h2>Student Details</h2>' +
+                               '<p><strong>Name:</strong> ' + this.name + '</p>' +
+                               '<p><strong>ID:</strong> ' + this.id + '</p>' +
+                               '<p><strong>Branch:</strong> ' + this.branch + '</p>';
+                document.body.appendChild(studentDiv);
+      }
+    }
+       window.onload = function() {
+          var header = document.createElement('h1');
+      header.textContent = 'My College - Student Details';
+      document.body.appendChild(header);
+         var student1 = new Student("Arjun", "A001", "Computer Science");
+       student1.displayDetails();
+            var infoPara = document.createElement('p');
+      infoPara.textContent = 'For more information, visit admin department.';
+      document.body.appendChild(infoPara);
+               var urlPara = document.createElement('p');
+      urlPara.textContent = 'Current URL: ' + window.location.href;
+      document.body.appendChild(urlPara);
+            var sizeButton = document.createElement('button');
+      sizeButton.textContent = 'Show Window Size';
+      sizeButton.onclick = function() {
+        alert('Window Size - Width: ' + window.innerWidth + 'px, Height: ' + window.innerHeight + 'px');
+      };
+      document.body.appendChild(sizeButton);
+            var newWindowButton = document.createElement('button');
+      newWindowButton.textContent = 'Open New Window';
+      newWindowButton.onclick = function() {
+                var newWin = window.open("", "NewWindow", "width=400,height=300");
+        newWin.document.write("<h2>Welcome to the new window!</h2><p>This window was opened using window.open()</p>");
+      };
+      document.body.appendChild(newWindowButton);
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
