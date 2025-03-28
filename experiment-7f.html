@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My College - Student Details</title>
+  <script>
+        function Student(name, branch) {
+      this.name = name;
+            this.id = "A" + Math.floor(Math.random() * 1000);
+      this.branch = branch;
+            this.displayDetails = function() {
+               var studentDiv = document.createElement('div');
+        studentDiv.innerHTML = '<h2>Student Details</h2>' +
+                               '<p><strong>Name:</strong> ' + this.name + '</p>' +
+                               '<p><strong>ID:</strong> ' + this.id + '</p>' +
+                               '<p><strong>Branch:</strong> ' + this.branch + '</p>';
+               document.body.appendChild(studentDiv);
+      }
+    }
+    window.onload = function() {
+      var header = document.createElement('h1');
+      header.textContent = 'My College - Student Details';
+      document.body.appendChild(header);
+      var student1 = new Student("Arjun Kumar", "Computer Science");
+      student1.displayDetails();
+      var regexHeader = document.createElement('h2');
+      regexHeader.textContent = 'Regex Object Properties and Methods';
+      document.body.appendChild(regexHeader);
+          var nameRegex = /^[A-Za-z\s]+$/;
+        var isNameValid = nameRegex.test(student1.name);
+      var testPara = document.createElement('p');
+      testPara.textContent = 'Using test(): The student name "' + student1.name + '" is ' + (isNameValid ? 'valid' : 'invalid') + '.';
+      document.body.appendChild(testPara);
+      var matchResult = student1.name.match(/[A-Z][a-z]+/);
+      var matchPara = document.createElement('p');
+      matchPara.textContent = 'Using match(): The first word in the name is "' + (matchResult ? matchResult[0] : 'Not Found') + '".';
+      document.body.appendChild(matchPara);
+            var searchIndex = student1.name.search(/\s/);
+      var searchPara = document.createElement('p');
+      searchPara.textContent = 'Using search(): The index of the first space in the name is ' + searchIndex + '.';
+      document.body.appendChild(searchPara);
+      var nameWithoutSpaces = student1.name.replace(/\s/g, "");
+      var replacePara = document.createElement('p');
+      replacePara.textContent = 'Using replace(): The name without spaces is "' + nameWithoutSpaces + '".';
+      document.body.appendChild(replacePara);
+      var execResult = nameRegex.exec(student1.name);
+      var execPara = document.createElement('p');
+      execPara.textContent = 'Using exec(): The result is ' + (execResult ? execResult[0] : 'null') + '.';
+      document.body.appendChild(execPara);
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
