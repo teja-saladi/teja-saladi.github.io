@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My College - Student Details</title>
+  <script>
+        function Student(name, branch, marks, totalMarks) {
+      this.name = name;
+            this.id = "A" + Math.floor(Math.random() * 1000);
+      this.branch = branch;
+      this.marks = marks;
+      this.totalMarks = totalMarks;
+            this.percentage = Math.round((marks / totalMarks) * 100);
+           this.displayDetails = function() {
+              var studentDiv = document.createElement('div');
+        studentDiv.innerHTML = '<h2>Student Details</h2>' +
+                               '<p><strong>Name:</strong> ' + this.name + '</p>' +
+                               '<p><strong>ID:</strong> ' + this.id + '</p>' +
+                               '<p><strong>Branch:</strong> ' + this.branch + '</p>' +
+                               '<p><strong>Marks:</strong> ' + this.marks + ' out of ' + this.totalMarks + '</p>' +
+                               '<p><strong>Percentage:</strong> ' + this.percentage + '%</p>';
+        document.body.appendChild(studentDiv);
+      }
+    }
+      window.onload = function() {
+            var header = document.createElement('h1');
+      header.textContent = 'My College - Student Details';
+      document.body.appendChild(header);
+      var student1 = new Student("Arjun Kumar", "Computer Science", 432, 500);
+            student1.displayDetails();
+           var infoPara = document.createElement('p');
+      infoPara.textContent = 'This example demonstrates string object properties and methods applied to student details.';
+      document.body.appendChild(infoPara);
+           var stringHeader = document.createElement('h2');
+      stringHeader.textContent = 'String Object Properties and Methods';
+      document.body.appendChild(stringHeader);
+            var nameStr = student1.name; 
+            var lengthPara = document.createElement('p');
+      lengthPara.textContent = 'Length of student name: ' + nameStr.length;
+      document.body.appendChild(lengthPara);
+            var upperPara = document.createElement('p');
+      upperPara.textContent = 'Uppercase: ' + nameStr.toUpperCase();
+      document.body.appendChild(upperPara);
+         var lowerPara = document.createElement('p');
+      lowerPara.textContent = 'Lowercase: ' + nameStr.toLowerCase();
+      document.body.appendChild(lowerPara);
+      var firstName = nameStr.substring(0, nameStr.indexOf(" "));
+      var substringPara = document.createElement('p');
+      substringPara.textContent = 'First Name (using substring): ' + firstName;
+      document.body.appendChild(substringPara);
+          var indexPara = document.createElement('p');
+      indexPara.textContent = 'Index of space in name: ' + nameStr.indexOf(" ");
+      document.body.appendChild(indexPara);
+            var splitName = nameStr.split(" ");
+      var splitPara = document.createElement('p');
+      splitPara.textContent = 'Split name (first and last): ' + splitName.join(" | ");
+      document.body.appendChild(splitPara);
+         var charPara = document.createElement('p');
+      charPara.textContent = 'First character of the name: ' + nameStr.charAt(0);
+      document.body.appendChild(charPara);
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
