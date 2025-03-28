@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Style Specification Formats</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            color: blue;
+        }
+        .styled-text {
+            color: green;
+            font-size: 20px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- External CSS -->
+</head>
+<body>
+    <h1>CSS Styling in HTML</h1>
+    <h2 style="color: red;">Inline CSS Example</h2>
+    <p style="font-weight: bold; color: purple;">This is an example of inline CSS.</p>
+    <h2>Internal CSS Example</h2>
+    <p class="styled-text">This paragraph is styled using internal CSS.</p>
+    <h2>External CSS Example</h2>
+    <p class="external-style">This paragraph is styled using external CSS (referenced in styles.css).</p>
+</body>
+</html>
