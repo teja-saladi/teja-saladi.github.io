@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple JavaScript Example</title>
+    <script>
+        // Internal JavaScript
+        function showInternalMessage() {
+            alert("Hello from Internal JavaScript!");
+        }
+    </script>
+</head>
+<body>
+    <h1>Internal & External JavaScript</h1>
+    <button onclick="showInternalMessage()">Internal JS</button>
+    <button onclick="showExternalMessage()">External JS</button>
+    <!-- Linking External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+Script.js
+// External JavaScript
+function showExternalMessage() {
+    alert("Hello from External JavaScript!");
+}
