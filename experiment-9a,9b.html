@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Functions and Events</title>
+  <script type="text/javascript">
+        function getInputNumber() {
+      return parseInt(document.getElementById("numberInput").value, 10);
+    }
+      function displayResult(message) {
+      document.getElementById("result").innerHTML = message;
+    }
+       function computeFactorial() {
+      var num = getInputNumber();
+      if (isNaN(num) || num < 0) {
+        displayResult("Please enter a non-negative integer.");
+        return;
+      }
+      var factorial = 1;
+      for (var i = 2; i <= num; i++) {
+        factorial *= i;
+      }
+      displayResult("Factorial of " + num + " is " + factorial + ".");
+    }
+  function computeFibonacci() {
+      var num = getInputNumber();
+      if (isNaN(num) || num < 0) {
+        displayResult("Please enter a non-negative integer.");
+        return;
+      }
+      var fibSeries = [];
+      var a = 0, b = 1;
+            if (num >= 0) {
+        fibSeries.push(a);
+      }
+          if (num >= 1) {
+        fibSeries.push(b);
+      }
+      var next = a + b;
+      while (next <= num) {
+        fibSeries.push(next);
+        a = b;
+        b = next;
+        next = a + b;
+      }
+      displayResult("Fibonacci series up to " + num + ": " + fibSeries.join(", "));
+    }
+    function computePrimes() {
+      var num = getInputNumber();
+      if (isNaN(num) || num < 2) {
+        displayResult("Please enter an integer greater than or equal to 2.");
+        return;
+      }
+      var primes = [];
+      for (var i = 2; i <= num; i++) {
+        var isPrime = true;
+               for (var j = 2; j <= Math.sqrt(i); j++) {
+          if (i % j === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime) {
+          primes.push(i);
+        }
+      }
+      displayResult("Prime numbers up to " + num + ": " + primes.join(", "));
+    }
+       function checkPalindrome() {
+      var input = document.getElementById("numberInput").value;
+      if (input === "") {
+        displayResult("Please enter a number.");
+        return;
+      }
+      var reversed = input.split("").reverse().join("");
+      if (input === reversed) {
+        displayResult(input + " is a palindrome.");
+      } else {
+        displayResult(input + " is not a palindrome.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>JavaScript Functions and Events</h1>
+  <p>
+    <label for="numberInput">Enter a number:</label>
+    <input type="text" id="numberInput" placeholder="Enter number" />
+  </p>
+  <p>
+    <button onclick="computeFactorial()">Factorial</button>
+    <button onclick="computeFibonacci()">Fibonacci</button>
+    <button onclick="computePrimes()">Prime</button>
+    <button onclick="checkPalindrome()">Palindrome</button>
+  </p>
+  <div id="result" style="margin-top:20px; font-size:1.2em;"></div>
+</body>
+</html>
