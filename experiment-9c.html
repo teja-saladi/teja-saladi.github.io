@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form Validation</title>
+  <style>
+    .error { color: red; }
+    .success { color: green; }
+    body { font-family: Arial, sans-serif; }
+    form div { margin-bottom: 10px; }
+  </style>
+  <script type="text/javascript">
+    function validateForm(event) {
+           event.preventDefault();
+              document.getElementById("message").innerHTML = "";
+          var name = document.getElementById("name").value.trim();
+      var mobile = document.getElementById("mobile").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var errors = [];
+      var nameRegex = /^[A-Za-z][A-Za-z0-9]{5,}$/;
+      if (!nameRegex.test(name)) {
+        errors.push("Name must start with an alphabet, followed by alphanumeric characters, and be at least 6 characters long.");
+      }
+      var mobileRegex = /^\d{10}$/;
+      if (!mobileRegex.test(mobile)) {
+        errors.push("Mobile number must be exactly 10 digits and contain only numbers.");
+      }
+      var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+      if (!emailRegex.test(email)) {
+        errors.push("E-mail must be in the format xxxxxxx@xxxxxx.xxx.");
+      }
+           var messageDiv = document.getElementById("message");
+      if (errors.length > 0) {
+        var errorHTML = "<ul>";
+        errors.forEach(function(error) {
+          errorHTML += "<li class='error'>" + error + "</li>";
+        });
+        errorHTML += "</ul>";
+        messageDiv.innerHTML = errorHTML;
+      } else {
+        messageDiv.innerHTML = "<p class='success'>Registration Successful!</p>";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Registration Form</h1>
+  <form onsubmit="validateForm(event)">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+    </div>
+    <div>
+      <label for="mobile">Mobile:</label>
+      <input type="text" id="mobile" placeholder="10-digit mobile number" required>
+    </div>
+    <div>
+      <label for="email">E-mail:</label>
+      <input type="text" id="email" placeholder="example@domain.com" required>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+  <div id="message" style="margin-top:20px;"></div>
+</body>
+</html>
